@@ -16,8 +16,9 @@ def abss(a):
         a = a * -1
     return a
 
-def lenn(a): ## Why does this only work for integers?
+def lenn(a): 
     #This function finds the length of a string.
+    #If  you're using a string, be sure to use quotations
     #Alternatively, I can use a "for loop" to check if the ord of each index is greater than 0 and then add it to length.
     length = 0
     a = str(a) #This function only works when converted to a string.
@@ -25,3 +26,21 @@ def lenn(a): ## Why does this only work for integers?
         length = length + 1
     return length
 
+def prime(n):
+    #This function checks to see if a number is prime by listing all the multiples of a number
+    #and checking to see if it has more than 2 multiples.
+    n = int(n) #converts it to a positive number
+    multiple = []
+    for i in range(n):
+        i = i + 1 #module 0 gives an error
+        if (n % i) == 0:
+            multiple.append(i) #adds the multiples of a number to the list of multiples
+    if n == 0 or n == 1:
+        return ("1 and 0 are neither prime nor composite")
+    elif n < 0:
+        return ("Negative numbers are never prime!")
+    elif len(multiple) > 2:
+        return ("Not Prime. The multiples are: ", multiple)
+    else:
+        return ("Prime")
+    
